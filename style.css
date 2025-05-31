@@ -1,0 +1,194 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.5s, color 0.5s;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Light / Dark Theme Variables */
+:root {
+  --bg: #0d0d0d;
+  --text: #eee;
+  --card-bg: rgba(0,255,150,0.05);
+  --card-border: rgba(0,255,150,0.2);
+  --btn-bg: #00c896;
+  --btn-hover: #00dca1;
+  --modal-bg: #222;
+  --input-bg: #333;
+  --input-text: #eee;
+  --link-color: #66d9ff;
+}
+body.light {
+  --bg: #fafafa;
+  --text: #111;
+  --card-bg: rgba(0,200,150,0.12);
+  --card-border: rgba(0,200,150,0.4);
+  --btn-bg: #00a67a;
+  --btn-hover: #00885f;
+  --modal-bg: #fff;
+  --input-bg: #e5e5e5;
+  --input-text: #111;
+  --link-color: #004e7c;
+}
+
+/* Header */
+header {
+  background: var(--card-bg);
+  padding: 30px 20px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 0 8px var(--card-border);
+}
+header h1 {
+  margin: 0 0 10px 0;
+  font-weight: 900;
+}
+header p {
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  padding: 5px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+#theme-toggle:hover {
+  background: var(--btn-bg);
+  color: white;
+}
+
+/* Plans container */
+main#plans-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 40px 15px 60px;
+  flex-grow: 1;
+  min-height: 300px;
+}
+
+/* Glassmorphism plan cards */
+.plan {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  padding: 25px 20px 30px;
+  width: 300px;
+  box-shadow: 0 8px 24px rgba(0,255,150,0.15);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+  cursor: default;
+  user-select: none;
+}
+.plan:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 32px rgba(0,255,150,0.3);
+}
+.plan h3 {
+  margin-top: 0;
+  font-weight: 800;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  user-select: text;
+}
+.plan p {
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  user-select: text;
+}
+.plan ul {
+  padding-left: 18px;
+  margin: 0 0 18px 0;
+  list-style-type: disc;
+  user-select: text;
+  flex-grow: 1;
+}
+.plan button {
+  background: var(--btn-bg);
+  color: white;
+  border: none;
+  padding: 12px 0;
+  font-size: 1rem;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+.plan button:hover,
+.plan button:focus {
+  background: var(--btn-hover);
+  outline: none;
+}
+
+/* Notes section */
+.notes {
+  background: var(--card-bg);
+  padding: 25px 20px;
+  margin: 20px auto 0;
+  max-width: 900px;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 6px 20px rgba(0,255,150,0.12);
+  color: var(--text);
+}
+.notes h2 {
+  margin-top: 0;
+}
+.notes ul {
+  padding-left: 20px;
+  margin: 10px 0 0 0;
+}
+.notes a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+.notes a:hover,
+.notes a:focus {
+  color: var(--btn-hover);
+  outline: none;
+}
+
+/* Testimonials */
+.testimonials {
+  background: var(--card-bg);
+  max-width: 900px;
+  margin: 20px auto 0;
+  padding: 25px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 6px 20px rgba(0,255,150,0.12);
+  color: var(--text);
+  text-align: center;
+}
+.testimonials h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+#testimonial-slider {
+  position: relative;
+  min-height: 100px;
+  font-style: italic;
+  font-weight
